@@ -2,12 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: black !important;
+    transition: background-color 0.3s;
     
 }
 
 header {
     height: 15vh;
-    background-color: beige;
+    background-color: #262626;
     color: #fff;
     text-align: center;
     padding: 1em;
@@ -24,20 +26,29 @@ main {
 
 button{
     width: 40vw;
-    border-radius: 5px !important;
+    border-radius: 10px !important;
     padding: 10px !important;
+    
+
+    background-color: #262626;
+    color: #d8b468;
+    border-color: #d8b468;
+    transition: transform 0.3s, background-color 0.3s;
     
 }
 
 button:hover{
     /* width: 100vw !important; */
-    background-color: #262626;
-    color: #d8b468;
-    border-color: #d8d8d8;
+    background-color: #d8b468;
+    border-color: #262626;
+    color: #262626;
+    
+    
 }
 
 .product {
-    border: 1px solid #ccc;
+    border: 1px solid #d8b468;
+    border-radius: 10px;
     padding: 15px;
     margin: 15px;
     text-align: center;
@@ -68,11 +79,23 @@ button:hover{
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #262626;
+    color: #d8b468;
     text-align: center;
     padding: 1em;
     width: 100%;
+}
+
+body.dark-theme {
+    background-color: #333; /* Dark theme background color */
+    color: #fff; /* Dark theme text color */
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
 }
 
 /* Existing styles remain unchanged */
