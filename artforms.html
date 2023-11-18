@@ -11,15 +11,74 @@
         main {
             display: flex;
         }
-        .artforms-container{
-            display: flex;
-            justify-content: space-between;
-            align-content: space-between;
-            border-radius: 5px white;
-            padding: 10px;
-        }
-    </style>
 
+        .artforms-container {
+            display: flex;
+            flex-direction: row;
+            margin: 0px;
+            padding: 0px;
+            flex-wrap: wrap;
+            /* flex-basis: calc(33.3% - 10px); */
+            justify-content: space-between;
+            /* padding: 10px; */
+            /* border: 1px solid #d8b468;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            text-align: center;
+            width: 45%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* Center vertically */
+            /* align-items: center; */
+            /* Center horizontally */
+            /* background-color: black;
+            color: #d8b468; */
+        }
+
+        .paintings {
+            padding: 30px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        .clocks {
+            padding: 30px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        .vases {
+            padding: 30px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        .resin-art {
+            padding: 30px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        .coasters {
+            padding: 30px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        .fridge-magnets {
+            padding: 30px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        /* .coasters {
+            height: 10px;
+            width: 50px;
+            border: 5px white;
+        } */
+    </style>
 </head>
 
 <body>
@@ -45,28 +104,31 @@
     </div>
 
     <main>
-        <!-- <h1>
-            text
-        </h1>
-        <button>
-            click here
-        </button> -->
-
         <div class="artforms-container">
-            <div class = "artforms-container paintings">
+            <div class="paintings">
                 <img src="assets/images/20210807_225613.jpg">
+                <h3>Paintings</h3>
             </div>
-            <div class = "artforms-container clocks">
+            <div class="clocks">
                 <img src="assets/images/20210807_225613.jpg">
+                <h3>Clocks</h3>
             </div>
-            <div class = "artforms-container vases">
-
+            <div class="vases">
+                <img src="assets/images/20210807_225613.jpg">
+                <h3>vases</h3>
             </div>
-            <div class = "artforms-container resin-art">
-
+            <div class="resin-art">
+                <img src="assets/images/20210807_225613.jpg">
+                <h3>Resin Art</h3>
             </div>
-            <div class = "artforms-container coasters"></div>
-            <div class = "artforms-container fridge-magnets"></div>
+            <div class="coasters">
+                <img src="assets/images/20210807_225613.jpg">
+                <h3>Tea coasters</h3>
+            </div>
+            <div class="fridge-magnets">
+                <img src="assets/images/20210807_225613.jpg">
+                <h3>Fridge Magnets</h3>
+            </div>
         </div>
 
     </main>
