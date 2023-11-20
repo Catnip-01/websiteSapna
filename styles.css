@@ -70,6 +70,7 @@ button:hover{
     object-fit: cover;
     margin-bottom: 15px;
     margin-top: 40px;
+    
 }
 
 .price {
@@ -79,13 +80,26 @@ button:hover{
 }
 
 img{
+    
+    
     height: 60vh;
     width: 60vh;
+    
     transition-duration: 0.3s;
 }
 img:hover {
+    filter: brightness(30%);
     transform: scale(1.1);
+}
+
+.img-text{
+    position: relative;
     
+    opacity: 0;
+}
+
+.image-container:hover .img-text{
+    opacity: 1;
 }
 
 footer {
