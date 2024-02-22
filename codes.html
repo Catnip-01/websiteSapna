@@ -107,4 +107,191 @@ class StackTest {
     </code>
 </pre>
 
+<h1>code 2: </h1>
+<pre>
+    <code>
+        // File: p1/TwoDim.java
+package p1;
 
+public class TwoDim {
+    private int x;
+    private int y;
+
+    public TwoDim() {
+        this.x = 0;
+        this.y = 0;
+    }
+
+    public TwoDim(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "Coordinate: x = " + x + " y = " + y;
+    }
+}
+
+
+        // File: p2/ThreeDim.java
+package p2;
+import p1.TwoDim;
+
+public class ThreeDim extends TwoDim {
+    private int z;
+
+    public ThreeDim() {
+        super(0, 0);
+        this.z = 0;
+    }
+
+    public ThreeDim(int x, int y, int z) {
+        super(x, y);
+        this.z = z;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " z = " + z;
+    }
+}
+
+
+        // File: PkgDemo.java
+import p1.TwoDim;
+import p2.ThreeDim;
+
+public class PkgDemo {
+    public static void main(String[] args) {
+        TwoDim td = new TwoDim(1, 2);
+        System.out.println(td);
+
+        ThreeDim thd = new ThreeDim(3, 4, 5);
+        System.out.println(thd);
+    }
+}
+
+    </code>
+</pre>
+
+<h1> code 3 : </h1>
+<pre>
+    <code>
+        class t1 extends Thread{
+    @Override
+    public void run(){
+        int c = 0;
+        int i = 0;
+        while (c < 3){
+            if (i % 2 != 0){
+                System.out.println("i : " + i);
+                c++;
+            
+            }
+            i++;
+            try{
+                Thread.sleep(1000);
+            } catch(Exception e){}
+
+        }
+    }
+}
+
+class t2 extends Thread{
+
+    int n;
+
+    public t2(int n){
+        this.n = n;
+    }
+    @Override
+    public void run(){
+        while (n != 0){
+            System.out.println(n%10);
+            n /= 10;
+
+            try{
+                Thread.sleep(1000);
+            }catch(Exception e){}
+        }
+    }
+}
+
+class ThreadOne{
+    public static void main(String[] args){
+        t1 one = new t1();
+        t2 two = new t2(12345);
+
+        one.start();
+        two.start();
+    }
+}
+    </code>
+</pre>
+<h1>Code 4 : </h1>
+<pre>
+    <code>
+        import java.awt.*;
+import java.awt.event.*;
+
+public class Program2 extends Frame implements ActionListener {
+    TextField tf1, tf2, tf3;
+    Button b1, b2;
+
+    Program2() {
+        tf1 = new TextField();
+        tf1.setBounds(50, 50, 150, 20);
+
+        tf2 = new TextField();
+        tf2.setBounds(50, 100, 150, 20);
+
+        tf3 = new TextField();
+        tf3.setBounds(50, 150, 150, 20);
+        tf3.setEditable(false);
+
+        b1 = new Button("+");
+        b1.setBounds(50, 200, 50, 50);
+
+        b2 = new Button("-");
+        b2.setBounds(120, 200, 50, 50);
+
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+
+        add(tf1);
+        add(tf2);
+        add(tf3);
+        add(b1);
+        add(b2);
+
+        setSize(300, 300);
+        setLayout(null);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        try {
+            int a = Integer.parseInt(tf1.getText());
+            int b = Integer.parseInt(tf2.getText());
+            int c = 0;
+
+            if (e.getSource() == b1) {
+                c = a + b;
+            } else if (e.getSource() == b2) {
+                c = a - b;
+            }
+
+            tf3.setText(String.valueOf(c));
+        } catch (NumberFormatException ex) {
+            tf3.setText("Invalid Input");
+        }
+    }
+
+    public static void main(String[] args) {
+        new Program2();
+    }
+}
+
+    </code>
+</pre>
