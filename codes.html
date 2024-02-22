@@ -330,3 +330,89 @@ public class Program4 {
     }
 }
 </pre>
+
+
+<h1>Code 6 : </h1>
+<pre>
+    import java.util.*;
+
+class InvalidTriangleException extends IllegalArgumentException {
+    @Override
+    public String toString() {
+        return "Not an acceptable triangle";
+    }
+}
+
+public class Program4 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int a, b, c;
+
+        System.out.println("Enter the 3 sides of a triangle:");
+        a = sc.nextInt();
+        b = sc.nextInt();
+        c = sc.nextInt();
+
+        try {
+            if ((a < b + c) && (b < a + c) && (c < a + b)) {
+                System.out.println("Valid Triangle");
+            } else {
+                throw new InvalidTriangleException();
+            }
+        } catch (InvalidTriangleException e) {
+            System.out.println(e);
+            // Optionally, you can print the stack trace for debugging:
+            // e.printStackTrace();
+        }
+    }
+}
+
+</pre>
+
+<h1>Code 7: </h1>
+<pre>
+    interface Calc {
+    int res(int x, int y);
+}
+
+public class Program6 {
+    public static void main(String args[]) {
+        Calc addition = (x, y) -> (x + y);
+        System.out.println("\nSUM IS: " + addition.res(2, 3));
+
+        Calc multiplication = (x, y) -> (x * y);
+        System.out.println("\nPRODUCT IS: " + multiplication.res(3, 4));
+    }
+}
+
+</pre>
+
+<h1>Code 8: </h1>
+<pre>
+    import java.util.Scanner;
+
+public class Program7 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string:");
+        String s = sc.nextLine();
+
+        if (s.isEmpty()) {
+            System.out.println("String is empty.");
+        } else {
+            int count = 0;
+            char prevChar = s.charAt(0);
+
+            for (int i = 1; i < s.length(); i++) {
+                if (s.charAt(i) == prevChar) {
+                    count++;
+                }
+                prevChar = s.charAt(i);
+            }
+
+            System.out.println("Number of consecutive occurrences: " + count);
+        }
+    }
+}
+
+</pre>
