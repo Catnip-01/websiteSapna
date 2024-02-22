@@ -295,3 +295,39 @@ public class Program2 extends Frame implements ActionListener {
 
     </code>
 </pre>
+<h1>Code 5 : </h1>
+<code>
+    import java.util.*;
+
+class InvalidTriangleException extends IllegalArgumentException {
+    @Override
+    public String toString() {
+        return "Not an acceptable triangle";
+    }
+}
+
+public class Program4 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int a, b, c;
+
+        System.out.println("Enter the 3 sides of a triangle:");
+        a = sc.nextInt();
+        b = sc.nextInt();
+        c = sc.nextInt();
+
+        try {
+            if ((a < b + c) && (b < a + c) && (c < a + b)) {
+                System.out.println("Valid Triangle");
+            } else {
+                throw new InvalidTriangleException();
+            }
+        } catch (InvalidTriangleException e) {
+            System.out.println(e);
+            // Optionally, you can print the stack trace for debugging:
+            // e.printStackTrace();
+        }
+    }
+}
+
+</code>
