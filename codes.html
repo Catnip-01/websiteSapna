@@ -1,4 +1,4 @@
-<h1>code 1 : </h1>
+<h1>code 1 - stack : </h1>
 
 <pre>
     <code>
@@ -107,7 +107,7 @@ class StackTest {
     </code>
 </pre>
 
-<h1>code 2: </h1>
+<h1>code 2 - packaging : </h1>
 <pre>
     <code>
         // File: p1/TwoDim.java
@@ -175,7 +175,7 @@ public class PkgDemo {
     </code>
 </pre>
 
-<h1> code 3 : </h1>
+<h1> code 3 - threading : </h1>
 <pre>
     <code>
         class t1 extends Thread{
@@ -229,7 +229,7 @@ class ThreadOne{
 }
     </code>
 </pre>
-<h1>Code 4 : </h1>
+<h1>Code 4 - event listener calculator :  </h1>
 <pre>
     <code>
         import java.awt.*;
@@ -295,7 +295,7 @@ public class Program2 extends Frame implements ActionListener {
 
     </code>
 </pre>
-<h1>Code 5 : </h1>
+<h1>Code 5 - triangle Exception handling : </h1>
 <pre>
     import java.util.*;
 
@@ -332,44 +332,50 @@ public class Program4 {
 </pre>
 
 
-<h1>Code 6 : </h1>
+<h1>Code 6 - times tables with delay: </h1>
 <pre>
-    import java.util.*;
-
-class InvalidTriangleException extends IllegalArgumentException {
-    @Override
-    public String toString() {
-        return "Not an acceptable triangle";
-    }
-}
-
-public class Program4 {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int a, b, c;
-
-        System.out.println("Enter the 3 sides of a triangle:");
-        a = sc.nextInt();
-        b = sc.nextInt();
-        c = sc.nextInt();
-
-        try {
-            if ((a < b + c) && (b < a + c) && (c < a + b)) {
-                System.out.println("Valid Triangle");
-            } else {
-                throw new InvalidTriangleException();
-            }
-        } catch (InvalidTriangleException e) {
-            System.out.println(e);
-            // Optionally, you can print the stack trace for debugging:
-            // e.printStackTrace();
+    class Table {
+    synchronized void display(int n) throws InterruptedException {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i * n);
+            Thread.sleep(1000);
         }
     }
 }
 
+class MultiplyThread extends Thread {
+    Table table;
+    int factor;
+
+    MultiplyThread(Table table, int factor) {
+        this.factor = factor;
+        this.table = table;
+    }
+
+    public void run() {
+        try {
+            table.display(factor);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt(); // Restore interrupted status
+        }
+    }
+}
+
+public class Program5 {
+    public static void main(String args[]) {
+        Table t = new Table();
+        MultiplyThread m1 = new MultiplyThread(t, 8);
+        MultiplyThread m2 = new MultiplyThread(t, 9);
+
+        m1.start();
+        m2.start();
+    }
+}
+
+
 </pre>
 
-<h1>Code 7: </h1>
+<h1>Code 7 - calc interface using lambda functions : </h1>
 <pre>
     interface Calc {
     int res(int x, int y);
@@ -387,7 +393,7 @@ public class Program6 {
 
 </pre>
 
-<h1>Code 8: </h1>
+<h1>Code 8 - consecutive occurences and toUpperCase :  </h1>
 <pre>
     import java.util.Scanner;
 
